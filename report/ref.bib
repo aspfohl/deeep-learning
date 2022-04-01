@@ -19,14 +19,40 @@
 }
 
 % Style Transfer
-@inproceedings{gatys2016styleTransfer,
-  title={Image style transfer using convolutional neural networks},
-  author={Gatys, Leon A and Ecker, Alexander S and Bethge, Matthias},
-  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
-  pages={2414--2423},
-  year={2016}
+@article{gatys2016styleTransfer,
+  author    = {Leon A. Gatys and
+               Alexander S. Ecker and
+               Matthias Bethge},
+  title     = {A Neural Algorithm of Artistic Style},
+  journal   = {CoRR},
+  volume    = {abs/1508.06576},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1508.06576},
+  eprinttype = {arXiv},
+  eprint    = {1508.06576},
+  timestamp = {Thu, 14 Oct 2021 09:16:23 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/GatysEB15a.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
+@article{Ashikhmin2003st,
+  author    = {N.Ashikhmin},
+  title     = {Fast texture transfer},
+  journal   = {IEEE Computer Graphics and Applications},
+  volume    = {23(4):38–43},
+  year      = {2003},
+  url       = {https://dl.acm.org/doi/10.1109/MCG.2003.1210863}
+}
+
+@article{Hertzmann2001st,
+  author    = {A. Hertzmann and C.E. Jacobs and N. Oliver and B. Curless and D.H. Salesi},
+  title     = {Image analogies.},
+  journal   = {ACM: In Proceedings of the 28th annual conference on Computer graphics and interactive techniques},
+  year      = {2001},
+  url       = {https://mrl.cs.nyu.edu/publications/image-analogies/}
+}
+
+ 
 @article{denton2015deepGAN,
   title={Deep generative image models using a laplacian pyramid of adversarial networks},
   author={Denton, Emily L and Chintala, Soumith and Fergus, Rob and others},
@@ -91,13 +117,22 @@
   year={2020},
   publisher={Hindawi}
 }
-
-@inproceedings{liu2021fashionVisTool,
-  title={Mmfashion: An open-source toolbox for visual fashion analysis},
-  author={Liu, Xin and Li, Jiancheng and Wang, Jiaqi and Liu, Ziwei},
-  booktitle={Proceedings of the 29th ACM International Conference on Multimedia},
-  pages={3755--3758},
-  year={2021}
+=
+@article{liu2021fashionVisTool,
+  author    = {Xin Liu and
+               Jiancheng Li and
+               Jiaqi Wang and
+               Ziwei Liu},
+  title     = {MMFashion: An Open-Source Toolbox for Visual Fashion Analysis},
+  journal   = {CoRR},
+  volume    = {abs/2005.08847},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2005.08847},
+  eprinttype = {arXiv},
+  eprint    = {2005.08847},
+  timestamp = {Thu, 09 Dec 2021 16:25:28 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2005-08847.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
 @inproceedings{yildirim2019customOutfits,
@@ -138,7 +173,31 @@
   pages={10541--10550},
   year={2019}
 }
+@inproceedings{m3dvton,
+    author    = {Zhao, Fuwei and Xie, Zhenyu and Kampffmeyer, Michael and Dong, Haoye and Han, Songfang and Zheng, Tianxiang and Zhang, Tao and Liang, Xiaodan},
+    title     = {M3D-VTON: A Monocular-to-3D Virtual Try-On Network},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {13239-13249}
+}
 
+
+% tryon
+@article{Pang2021tryon,
+  title={An Efficient Style Virtual Try on Network for
+Clothing Business Industry},
+  author={Shanchen Pang and Xixi Tao and Neal N. Xiong and Yukun Dong},
+  journal={arXiv preprint arXiv:2105.13183},
+  year={2021}
+}
+
+@article{Tiwari2021tryon,
+  title={DeepDraper: Fast and Accurate 3D Garment Draping over a 3D Human Body},
+  author={Lokender Tiwari and Brojeshwar Bhowmick},
+  journal={arXiv preprint},
+  year={2021}
+}
 
 % Transformers
 @article{khan2021CVtransSurvey,
@@ -183,17 +242,44 @@
 % datasets
 @article{rost2018fashiongen,
   title={Fashion-Gen: The Generative Fashion Dataset and Challenge},
-  author={Negar Rostamzadeh, Seyedarian Hosseini, Thomas Boquet, Wojciech Stokowiec, Ying Zhang },
+  author={Negar Rostamzadeh and Seyedarian Hosseini and Thomas Boquet and Wojciech Stokowiec and Ying Zhang },
   journal={arXiv preprint arXiv:1806.08317},
   year={2018}
 }
 
-@article{cimpoi14describing,
-  Author    = {M. Cimpoi and S. Maji and I. Kokkinos and S. Mohamed and and A. Vedaldi},
-  Title     = {Describing Textures in the Wild},
-  Booktitle = {Proceedings of the {IEEE} Conf. on Computer Vision and Pattern Recognition ({CVPR})},
-  Year      = {2014}}
- 
+@misc{dong2019data1,
+  doi = {10.48550/ARXIV.1902.11026},
+  url = {https://arxiv.org/abs/1902.11026},
+  author = {Dong, Haoye and Liang, Xiaodan and Wang, Bochao and Lai, Hanjiang and Zhu, Jia and Yin, Jian},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {Towards Multi-pose Guided Virtual Try-on Network},
+  publisher = {arXiv},
+  year = {2019},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+
+% 3D Modeling
+@article{saito2020PIFuHD,
+  doi = {10.48550/ARXIV.2004.00452},
+  url = {https://arxiv.org/abs/2004.00452},
+  author = {Saito, Shunsuke and Simon, Tomas and Saragih, Jason and Joo, Hanbyul},
+  journal   = {CoRR},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), Graphics (cs.GR), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {PIFuHD: Multi-Level Pixel-Aligned Implicit Function for High-Resolution 3D Human Digitization},
+  publisher = {arXiv},
+  year = {2020},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+@misc{zhureef,
+    title = {Registering Explicit to Implicit: Towards High-Fidelity Garment mesh Reconstruction from Single Images},
+    author = {Zhu, Heming and Qiu, Lingteng and Qiu, Yuda and Han, Xiaoguang},
+    year={2022},
+    publisher = {arXiv},
+    doi = {10.48550/ARXIV.2203.15007},
+}
+
 @article{Ionescu2014pose,
 author = {Ionescu, Catalin and Papava, Dragos and Olaru, Vlad and Sminchisescu,  Cristian},
 title = {Human3.6M: Large Scale Datasets and Predictive Methods for 3D Human Sensing in Natural Environments},
@@ -216,6 +302,29 @@ year = {2011}
 
 
 % evaluation
+@misc{date2017fashion2d,
+  doi = {10.48550/ARXIV.1707.09899},
+  url = {https://arxiv.org/abs/1707.09899},
+  author = {Date, Prutha and Ganesan, Ashwinkumar and Oates, Tim},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), Artificial Intelligence (cs.AI), Information Retrieval (cs.IR), Neural and Evolutionary Computing (cs.NE), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {Fashioning with Networks: Neural Style Transfer to Design Clothes},
+  publisher = {arXiv},
+  year = {2017},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+
+
+@ARTICLE{wang2015eval,
+  author={Zhou Wang and Bovik, A.C. and Sheikh, H.R. and Simoncelli, E.P.},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Image quality assessment: from error visibility to structural similarity}, 
+  year={2004},
+  volume={13},
+  number={4},
+  pages={600-612},
+  doi={10.1109/TIP.2003.819861}}
+
+
 @article{borji2018eval,
   title={Pros and Cons of GAN Evaluation Measures},
   author={Ali Borji},
