@@ -1,9 +1,5 @@
 \documentclass{article}
 
-% if you need to pass options to natbib, use, e.g.:
-%     \PassOptionsToPackage{numbers, compress}{natbib}
-% before loading neurips_2022
-
 % ready for submission
 \usepackage[preprint, nonatbib]{neurips_2022}
 
@@ -25,8 +21,8 @@
 \usepackage{subcaption}
 \usepackage{pythonhighlight}
 
-
-\title{3D Stylized Avatars from a Single Image}
+% todo: better name
+\title{3D-SARI: 3D Stylized Avatars from a Rendered Image}
 
 \author{%
   Mahir Kothary\\
@@ -63,10 +59,10 @@ In this paper, we propose a novel method for generating 3D avatars using a singl
 
 
 \section{Introduction}
-% What is the problem you are working on and why is it important? 
+What is the problem you are working on and why is it important? 
 
 
-% We want to apply transformer-based style transfer to fashion design and compare the results with previous research using CNN-based style transfer. Fashion design is the art of applying design, style and texture synthesis to create billions of dresses, suits, shoes and bags in our daily life. Artworks generated using state-of-the-art image techniques are already creative and impressive to human eyes, but fashion design using the same techniques is still far from attractive due to the limits of CNN-based style transfer. Novel research combining transformers and style transfer has become a trending topic in the past few months. The release of Nvidia's transformer-based GPU H100 \footnote{\href{https://www.nvidia.com/en-us/data-center/h100/}{Nvidia GPU H100}} also demonstrates the demand and potential of transformers in deep neural networks. 
+% We want to apply transformer-based style transfer to fashion design and compare the results with previous research using CNN-based style transfer. Fashion design is the art of applying design, style and texture synthesis to create billions of dresses, suits, shoes and bags in our daily life. Artworks generated using state-of-the-art image techniques are already creative and impressive to human eyes, but fashion design using the same techniques is still far from attractive due to the limits of CNN-based style transfer.
 
 
 \subsection{Related Work}
@@ -96,23 +92,25 @@ Note: fit dress to ppl wearing tops and pants, fit tops (and auto-generate the p
 
 % You should list the questions the project will address and that will be discussed in the report.
 
-% \subsection{Software}
-% You should list what software you will be using or will build upon.
-
-\subsection{Pre-trained models}
-% What datasets are you going to use?
-
-% We will consider using pre-trained fashion models including \cite{todo}, as well as many open-source datasets for training and fine-tuning. For images, we will consider Kaggle's fashion product dataset (44,400 images) \footnote{\href{https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset}{Kaggle's Fashion Product Images Dataset}} and Fashion-Gen (293,008 images) \cite{rost2018fashiongen}, which both include labels and various fashion items (e.g. shirts, dresses, pants, etc) from various angles. Since textures may be more difficult to generate we could also consider integrating the describable textures dataset \cite{cimpoi14describing}. Lastly, many 3D human pose datasets exist such as Human3.6M \cite{Ionescu2011pose}\cite{Ionescu2014pose}, which could serve as a starting point for projecting clothing into three dimensional space.
-
-% Describe the datasets you will use and how will you know if the project is successful.
-% Describe the hypotheses you will test and the related work.
-
+\subsection{Models}
+% What models are you going to use?
 
 % https://arxiv.org/abs/2108.05126
 % what style transfer model
 
+
+\subsection{Dataset}
+% Describe the datasets you will use and how will you know if the project is successful.
+% Describe the hypotheses you will test and the related work.
+depending on what style transfer models we wanna use (pre-trained?)
+
+\subsection{Infrastructure}
+Can we run it?
+% You should list what software/infrastructure you will be using or will build upon.
+
+
 \subsection{Evaluation}
-% What results did others get on those datasets?
+% What results did others get on those datasets? - 
 Evaluating the performance of our proposed work can be challenging because results of generative models can often be subjective \cite{borji2018eval}. We plan to use a combination of human judgement and quantitative metrics to benchmark our results to other benchmarks for this application \cite{todo}.
 
 \textbf{Human Judgement} Many image generation models have depended on surveys and/or Amazon Mechanical Turk \cite{zhou2019hype} to do image evaluation, focusing on ranking results against each other, rating qualities of results across different dimensions, or even serving as a Turing test (e.g. Is this image real or AI-generated) \cite{salimans2016eval}. We plan to send out randomized surveys to the Cornell Tech community that will assess the output of our model in this way.
@@ -125,7 +123,7 @@ Evaluating the performance of our proposed work can be challenging because resul
 \hline
 \textbf{Date} & \textbf{Milestone Completed}                \\ \hline
 April 1       & Background research and literature review     \\ \hline
-April 8       & Pre-trained models collected and prepared \\ \hline
+April 8       & Pre-trained models collected and assessed \\ \hline
 April 15      & Model pipeline prototype complete
 \\ \hline
 April 21      & Preliminary results, judged by team         \\ \hline
@@ -156,3 +154,8 @@ May 10        & Final results visualized and report created \\ \hline
 
 
 \end{document}
+
+
+
+
+% We will consider using pre-trained fashion models including \cite{todo}, as well as many open-source datasets for training and fine-tuning. For images, we will consider Kaggle's fashion product dataset (44,400 images) \footnote{\href{https://www.kaggle.com/datasets/paramaggarwal/fashion-product-images-dataset}{Kaggle's Fashion Product Images Dataset}} and Fashion-Gen (293,008 images) \cite{rost2018fashiongen}, which both include labels and various fashion items (e.g. shirts, dresses, pants, etc) from various angles. Since textures may be more difficult to generate we could also consider integrating the describable textures dataset \cite{cimpoi14describing}. Lastly, many 3D human pose datasets exist such as Human3.6M \cite{Ionescu2011pose}\cite{Ionescu2014pose}, which could serve as a starting point for projecting clothing into three dimensional space.
