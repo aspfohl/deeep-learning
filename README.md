@@ -10,11 +10,12 @@ You need to load the pretrained models from this url (see readme.txt on where to
 Follow the documentation from that project to run inference calls. IE
 
 ```bash
-python3 test.py --model MTM --name MTM --dataroot mpv3d_example --datalist test_pairs --results_dir results
-python3 test.py --model DRM --name DRM --dataroot mpv3d_example --datalist test_pairs --results_dir results
-python3 test.py --model TFM --name TFM --dataroot mpv3d_example --datalist test_pairs --results_dir results
-python3 rgbd2pcd.py
+python3 M3D-VTON/test.py --model MTM
+python3 M3D-VTON/test.py --model DRM
+python3 M3D-VTON/test.py --model TFM
+python3 M3D-VTON/rgbd2pcd.py
 ```
+By default, this will use data in the parent [data](../data) directory and put results in the parent [results](../results) (see [test_options](test_options.py))
 
 This runs everything:
 1. Monocular Prediction Module (MTM?? - inconsistency in paper)

@@ -21,7 +21,7 @@ class BaseOptions():
         """Define the common options that are used in both training and test."""
         # basic parameters
         parser.add_argument('--dataroot', type=str,
-                            default='mpv3d_example', help='path to dataset')
+                            default='data', help='path to dataset')
         parser.add_argument('--datamode', type=str, default='aligned',
                             help='dataset mode for MTM [unaligned | aligned]')
         parser.add_argument('--datalist', type=str, default='test_pairs',
@@ -32,7 +32,7 @@ class BaseOptions():
                             help='customized suffix: opt.name = opt.name + suffix')
         parser.add_argument('--gpu_ids', type=str, default='-1',
                             help='gpu ids: e.g. 0,1,2, currently we only support single GPU, use -1 for CPU')
-        parser.add_argument('--checkpoints_dir', type=str, default='pretrained',
+        parser.add_argument('--checkpoints_dir', type=str, default='M3D-VTON/pretrained',
                             help='models are saved to opt.checkpoints_dir/opt.datamode/opt.name')
         # model parameters
         parser.add_argument('--model', type=str, default='MTM',

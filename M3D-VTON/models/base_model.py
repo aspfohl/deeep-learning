@@ -32,8 +32,11 @@ class BaseModel(ABC):
         self.opt = opt
         self.gpu_ids = opt.gpu_ids
         self.isTrain = opt.isTrain
-        self.device = torch.device('cuda:{}'.format(self.gpu_ids[0])) if self.gpu_ids else torch.device('cpu')  # get device name: CPU or GPU
-        self.save_dir = os.path.join(opt.checkpoints_dir, opt.datamode, opt.name)  # save all the checkpoints to save_dir.
+        self.device = torch.device('cuda:{}'.format(
+            self.gpu_ids[0])) if self.gpu_ids else torch.device('cpu')  # get device name: CPU or GPU
+        # save all the checkpoints to save_dir.
+        self.save_dir = os.path.join(
+            opt.checkpoints_dir, opt.datamode, opt.model)
         self.loss_names = []
         self.model_names = []
         self.visual_names = []
@@ -80,7 +83,8 @@ class BaseModel(ABC):
             opt (Option class) -- stores all the experiment flags; needs to be a subclass of BaseOptions
         """
         if self.isTrain:
-            self.schedulers = [networks.get_scheduler(optimizer, opt) for optimizer in self.optimizers]
+            self.schedulers = [networks.get_scheduler(
+                optimizer, opt) for optimizer in self.optimizers]
         if not self.isTrain or opt.continue_train:
             load_suffix = 'iter_%d' % opt.load_iter if opt.load_iter > 0 else opt.epoch
             self.load_networks(load_suffix)
@@ -92,7 +96,7 @@ class BaseModel(ABC):
             if isinstance(name, str):
                 net = getattr(self, 'net' + name)
                 net.train()
-                
+
     def eval(self):
         """Make models eval mode during test time"""
         for name in self.model_names:
@@ -139,7 +143,8 @@ class BaseModel(ABC):
         errors_ret = OrderedDict()
         for name in self.loss_names:
             if isinstance(name, str):
-                errors_ret[name] = float(getattr(self, 'loss_' + name))  # float(...) works for both scalar tensor and float number
+                # float(...) works for both scalar tensor and float number
+                errors_ret[name] = float(getattr(self, 'loss_' + name))
         return errors_ret
 
     def save_networks(self, epoch):
@@ -196,17 +201,17 @@ class BaseModel(ABC):
                 num_params = 0
                 for param in net.parameters():
                     num_params += param.numel()
-                if verbose: # save detailed model info to the disk
+                if verbose:  # save detailed model info to the disk
                     os.makedirs(self.save_dir, exist_ok=True)
                     file_name = os.path.join(self.save_dir, 'model.txt')
-                    with open(file_name, 'wt') as model_file: 
+                    with open(file_name, 'wt') as model_file:
                         print(net, file=model_file)
-                        model_file.write('\n[Network %s] Total number of parameters : %.3f M\n' % (name, num_params / 1e6))
+                        model_file.write('\n[Network %s] Total number of parameters : %.3f M\n' % (
+                            name, num_params / 1e6))
                     model_file.close()
-                print('[Network %s] Total number of parameters : %.3f M' % (name, num_params / 1e6))
+                print('[Network %s] Total number of parameters : %.3f M' %
+                      (name, num_params / 1e6))
         print('-----------------------------------------------')
-        
-       
 
     def set_requires_grad(self, nets, requires_grad=False):
         """Set requies_grad=Fasle for all the networks to avoid unnecessary computations
