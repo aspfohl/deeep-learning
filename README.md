@@ -1,5 +1,7 @@
 # Deep Learning Final Project
 
+## Data
+See [data readme](data/README.md)
 
 ## M3D-VTON
 
@@ -29,4 +31,5 @@ You can then load the results in Meshlab by importing the results from a single 
 
 
 ## OpenPose
-Copied directly from https://github.com/CMU-Perceptual-Computing-Lab/openpose
+Copied from https://github.com/CMU-Perceptual-Computing-Lab/openpose
+See https://maelfabien.github.io/tutorials/open-pose/#installation for installation
