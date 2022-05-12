@@ -15,14 +15,14 @@ This includes our data, and data from the M3D-VTON demo.
     <td>Cloth</td>
     <td>Input</td>
     <td>In-shop clothing image</td>
-    <td>Image with resolution 320*512</td>
+    <td>Image with resolution 320*512, JPG</td>
     <td><img src="cloth/SO821D03A-Q11@12=cloth_front.jpg"></td>
-  </tr> 
+  </tr>
   <tr>
     <td>Cloth Mask</td>
     <td>https://www.remove.bg/ + Cloth</td>
     <td>Mask of clothing</td>
-    <td>Image with resolution 320*512</td>
+    <td>Image with resolution 320*512, JPG</td>
     <td><img src="cloth-mask/SO821D03A-Q11@12=cloth_front_mask.jpg"></td>
   </tr>
   <tr>
@@ -78,7 +78,7 @@ This includes our data, and data from the M3D-VTON demo.
 
 This connects cloth (clothing articles) with images (human poses)
 
-eg 
+eg
 ```
 ZX121DA0E-Q11@6=person_whole_front.png    THJ21D007-H11@10=cloth_front.jpg
 BJ721E05W-J11@9=person_whole_front.png    SO821D03A-Q11@12=cloth_front.jpg

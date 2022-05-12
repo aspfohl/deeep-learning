@@ -3,6 +3,17 @@
 ## Data
 See [data readme](data/README.md)
 
+## Add a new image
+
+Notebook: https://colab.research.google.com/drive/1FtlPRbUT3ipQnKOcq1_sH8d7eZ7_vcwB?authuser=2#scrollTo=Ov3DXqfY2LjJ
+
+1. All images of models (person) should be in `tryon_folder`. When a new person is added, please be sure they have a transparent background and are of PNG. The name should have `_whole_front.png` at the end
+2. All outputs from styletransfer images should be in `style_transfer` as a `png` with a transparent background
+3. You should update `tryon_folder/test_pairs.txt` with a model -> style_transfer combination you want, for example
+```
+person_whole_front.png    shirt.jpg
+```
+
 ## M3D-VTON
 
 This is a copied version of the code available at https://github.com/fyviezhao/M3D-VTON
