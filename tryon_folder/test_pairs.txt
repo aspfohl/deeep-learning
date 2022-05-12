@@ -1,1 +1,1 @@
-person.png    shirt.jpg
+person_whole_front.png    shirt.jpg
