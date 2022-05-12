@@ -1,1 +1,2 @@
-person.png    shirt.png
+person_whole_front.png    kurti.jpg
+person_2_whole_front.png    green_dress.jpg
