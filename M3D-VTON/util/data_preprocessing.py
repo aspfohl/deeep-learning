@@ -70,7 +70,7 @@ def get_hand_mask(hand_keypoints):
     bottom_mask = np.ones((512,320,1))
     if s_c > 0.1 and e_c > 0.1:
         up_mask = get_rectangle_mask(s_x,s_y,e_x,e_y)
-        kernel = np.ones((20,20),np.uint8)  
+        kernel = np.ones((20,20),np.uint8)
         up_mask = cv2.dilate(up_mask,kernel,iterations = 1)
         up_mask = (up_mask > 0).astype(np.float32)[...,np.newaxis]
     if e_c > 0.1 and w_c > 0.1:
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
 
     # -------------------- Pre-Alignment ------------------------ #
-    data_modes = ['train_pairs','test_pairs']
+    data_modes = ['test_pairs']
     for data_mode in data_modes:
         # target dirs
         cloth_align_dst = os.path.join(MPV3D_root, 'aligned', data_mode, 'cloth')
@@ -135,8 +135,8 @@ if __name__ == '__main__':
             cm_path = os.path.join(cloth_mask_root, cmname)
             parsename = imname.replace('.png','_label.png')
             parse_pth = os.path.join(parse_root, parsename)
-            
-                    
+
+
             c = Image.open(c_path)
             cm = Image.open(cm_path)
             c_array = np.array(c)
@@ -146,7 +146,7 @@ if __name__ == '__main__':
             parse_roi = (parse_array == 14).astype(np.float32) + \
                     (parse_array == 15).astype(np.float32) + \
                     (parse_array == 5).astype(np.float32)
-            
+
 
             # flat-cloth forground & bbox
             c_fg = np.where(cm_array!=0)
@@ -163,7 +163,7 @@ if __name__ == '__main__':
             parse_roi_center = [(l_parse_roi+r_parse_roi)/2, (t_parse_roi+b_parse_roi)/2]
             parse_roi_bbox_h = b_parse_roi - t_parse_roi
             parse_roi_bbox_w = r_parse_roi - l_parse_roi
-            
+
             # scale_factor & paste location
             if c_bbox_w/c_bbox_h > parse_roi_bbox_w/parse_roi_bbox_h:
                 ratio = parse_roi_bbox_h / c_bbox_h
