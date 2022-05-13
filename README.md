@@ -1,8 +1,5 @@
 # Deep Learning Final Project
 
-## Data
-See [data readme](data/README.md)
-
 ## Add a new image
 
 Notebook: https://colab.research.google.com/drive/1FtlPRbUT3ipQnKOcq1_sH8d7eZ7_vcwB?authuser=2#scrollTo=Ov3DXqfY2LjJ
@@ -15,6 +12,8 @@ person_whole_front.png    shirt.jpg
 ```
 
 ## M3D-VTON
+
+For complete documentation around the input directory structure expected, See [the M3D-VTON data readme](vton-data-doc.md)
 
 This is a copied version of the code available at https://github.com/fyviezhao/M3D-VTON
 
