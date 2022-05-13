@@ -20,14 +20,14 @@ from matplotlib import pyplot as plt
 import imageio
 
 # CHANGE ME ---------------------------------------------
-FOLDER = "/Users/anna/Git/aspfohl/deeep-learning/results"
-SAMPLE = "person"
+FOLDER = "/Users/anna/Git/aspfohl/deeep-learning"
+SAMPLE = "Jessica-Walker-Full-Body-Shot--scaled-removebg-preview"
 DEPTH = True
 # -------------------------------------------------------
 
-
-f = f"{FOLDER}/aligned/pcd/test_pairs/{SAMPLE}.ply"
-o = f"{FOLDER}/gifs/{SAMPLE}"
+f_root = "results/aligned/pcd/test_pairs"
+f = f"{FOLDER}/{f_root}/{SAMPLE}.ply"
+o_temp = f"{FOLDER}/temp"
 
 count = 0
 
@@ -46,15 +46,17 @@ def rotate_view(vis):
     ctr.rotate(50, 0)  # no idea the units here
 
     # capture the image (colored)
-    image = vis.capture_screen_float_buffer()
-    plt.imshow(np.asarray(image))
-    plt.savefig(f"{o}/image{str(count).zfill(2)}.png")
+    image = np.asarray(vis.capture_screen_float_buffer())
 
     # capture the depth (slow)
     if DEPTH:
-        depth = vis.capture_depth_float_buffer()
-        plt.imshow(np.asarray(depth))
-        plt.savefig(f"{o}/depth{str(count).zfill(2)}.png")
+        depth = np.asarray(vis.capture_depth_float_buffer())
+        depth = np.repeat(np.expand_dims(depth, 2), 3, 2) / depth.max()
+        image = np.column_stack((image, depth))
+
+    plt.imshow(image)
+    plt.axis('off')
+    plt.savefig(f"{o_temp}/{str(count).zfill(2)}.png")
 
     count += 1
     if count > 40:
@@ -63,14 +65,15 @@ def rotate_view(vis):
     return False
 
 
-def generate_gif(pattern):
+def generate_gif(f):
     """
     generate gif from a bunch of images
     """
-    file_list = glob.glob(f'{o}/{pattern}*.png')
+    pattern = f.split("/")[-1].split(".")[0]
+    file_list = glob.glob(f'{o_temp}/*.png')
     file_list.sort()
     images = [imageio.imread(f) for f in file_list]
-    imageio.mimsave(f'{o}/{pattern}.gif', images)
+    imageio.mimsave(f'{f_root}/{pattern}.gif', images)
 
 
 pcd = o3d.io.read_point_cloud(f)
@@ -81,6 +84,4 @@ try:
 except ZeroDivisionError:
     pass  # Done!
 
-generate_gif("image")
-if DEPTH:
-    generate_gif("depth")
+generate_gif(f)

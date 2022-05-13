@@ -1,4 +1,5 @@
 *.DS_Store
+temp/*
 
 # these models are too big for git (you need to manually locally download)
 M3D-VTON/pretrained/aligned/DRM/latest_net_DRM.pth
