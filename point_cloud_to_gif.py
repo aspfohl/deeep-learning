@@ -21,11 +21,12 @@ import imageio
 
 # CHANGE ME ---------------------------------------------
 FOLDER = "/Users/anna/Git/aspfohl/deeep-learning"
-SAMPLE = "Jessica-Walker-Full-Body-Shot--scaled-removebg-preview"
-DEPTH = True
+SAMPLE = "anna"
+DEPTH = False
+MAKE_BG_BLACK = False
 # -------------------------------------------------------
 
-f_root = "results/aligned/pcd/test_pairs"
+f_root = "run_results_1652501271/pcd"
 f = f"{FOLDER}/{f_root}/{SAMPLE}.ply"
 o_temp = f"{FOLDER}/temp"
 
@@ -35,11 +36,12 @@ count = 0
 def rotate_view(vis):
     global count
 
-    # first thing, make the background black
-    opt = vis.get_render_option()
-    if opt.background_color.sum() != 0:
-        opt.background_color = np.asarray([0, 0, 0])
-        return False  # ? if you don't do this, first image will have white bg
+    if MAKE_BG_BLACK:
+        # first thing, make the background black
+        opt = vis.get_render_option()
+        if opt.background_color.sum() != 0:
+            opt.background_color = np.asarray([0, 0, 0])
+            return False  # ? if you don't do this, first image will have white bg
 
     # then, rotate
     ctr = vis.get_view_control()
